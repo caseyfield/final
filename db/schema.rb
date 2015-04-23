@@ -13,4 +13,72 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
+  create_table "appointment_slots", force: true do |t|
+    t.integer "start_time"
+    t.integer "end_time"
+    t.integer "day"
+    t.integer "month"
+    t.integer "year"
+    t.integer "location_id"
+    t.string  "available"
+    t.integer "user_id"
+  end
+
+  add_index "appointment_slots", ["location_id"], name: "index_appointment_slots_on_location_id"
+  add_index "appointment_slots", ["user_id"], name: "index_appointment_slots_on_user_id"
+
+  create_table "inventories", force: true do |t|
+    t.integer "user_id"
+    t.integer "day_created"
+    t.integer "month_created"
+    t.integer "year_created"
+  end
+
+  add_index "inventories", ["user_id"], name: "index_inventories_on_user_id"
+
+  create_table "items", force: true do |t|
+    t.string  "name"
+    t.text    "description"
+    t.string  "photograph"
+    t.string  "status"
+    t.integer "price_received"
+    t.string  "vendor"
+    t.integer "inventory_list"
+  end
+
+  create_table "locations", force: true do |t|
+    t.string "city"
+    t.string "state"
+    t.string "country"
+  end
+
+  create_table "reviews", force: true do |t|
+    t.integer "user_id"
+    t.integer "appointment_slot_id"
+    t.integer "stars"
+    t.text    "body"
+    t.integer "day_created"
+    t.integer "month_created"
+    t.integer "year_created"
+  end
+
+  add_index "reviews", ["appointment_slot_id"], name: "index_reviews_on_appointment_slot_id"
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
+
+  create_table "users", force: true do |t|
+    t.string  "name"
+    t.string  "email"
+    t.string  "phone_number"
+    t.string  "address"
+    t.integer "credit_card"
+    t.string  "password"
+  end
+
+  create_table "zip_codes", force: true do |t|
+    t.integer "zip"
+    t.integer "location_id"
+  end
+
+  add_index "zip_codes", ["location_id"], name: "index_zip_codes_on_location_id"
+
 end
