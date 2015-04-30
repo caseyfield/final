@@ -1,0 +1,14 @@
+<div class="row">
+	<div class="col-sm-12">
+		<table style="width: 50%" class="table table-striped">
+			<th>Users</th>
+			<% @users.each do |user| %>
+			<tr>
+				<td>
+				<a href="/users/<%= user.id %>"><%= user.name %></a>
+				</td>
+			</tr>
+		<% end %>
+		</table>
+	</div>
+</div>
