@@ -12,6 +12,8 @@
 		<%= form.text_field :credit_card, class: "form-control" %>
 		<%= form.label :password %>
 		<%= form.text_field :password, class: "form-control" %>
+		<%= form.label :zip_code_id %>
+	    <%= form.collection_select(:zip_code_id, Zip_code.all, :id, :zip) %>
 	</div>
 	<%= form.button 'Update User', class: "btn btn-default" %>
 <% end %>

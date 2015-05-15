@@ -5,6 +5,7 @@ User:
   address: string
   credit_card: integer
   password: string
+  zip_code_id: integer
 
 Appointment_slot:
   start_time: integer
@@ -12,22 +13,13 @@ Appointment_slot:
   day: integer
   month: integer
   year: integer
-  location_id: integer
   available: string
-  user_id: integer
-
-Location:
-  city: string
-  state: string
-  country: string
 
 Zip_code:
   zip: integer
-  location_id: integer
 
 Review:
   user_id: integer
-  appointment_slot_id: integer
   stars: integer
   body: text
   day_created: integer
@@ -47,4 +39,4 @@ Item:
   status: string
   price_received: integer
   vendor: string
-  inventory_list: integer
+  inventory_id: integer

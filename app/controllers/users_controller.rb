@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 		redirect_to users_url
 	end
 
-	def destory
+	def destroy
 		@user = User.find_by(id: params["id"])
 		@user.delete
 		redirect_to users_url
