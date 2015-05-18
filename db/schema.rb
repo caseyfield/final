@@ -43,18 +43,13 @@ ActiveRecord::Schema.define(version: 0) do
     t.string  "status"
     t.integer "price_received"
     t.string  "vendor"
-    t.integer "inventory_list"
+    t.integer "inventory_id"
   end
 
-  create_table "locations", force: true do |t|
-    t.string "city"
-    t.string "state"
-    t.string "country"
-  end
+  add_index "items", ["inventory_id"], name: "index_items_on_inventory_id"
 
   create_table "reviews", force: true do |t|
     t.integer "user_id"
-    t.integer "appointment_slot_id"
     t.integer "stars"
     t.text    "body"
     t.integer "day_created"
@@ -62,7 +57,6 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "year_created"
   end
 
-  add_index "reviews", ["appointment_slot_id"], name: "index_reviews_on_appointment_slot_id"
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "users", force: true do |t|
@@ -72,7 +66,10 @@ ActiveRecord::Schema.define(version: 0) do
     t.string  "address"
     t.integer "credit_card"
     t.string  "password"
+    t.integer "zip_code_id"
   end
+
+  add_index "users", ["zip_code_id"], name: "index_users_on_zip_code_id"
 
   create_table "zip_codes", force: true do |t|
     t.integer "zip"
