@@ -3,7 +3,7 @@ User:
   email: string
   phone_number: string
   address: string
-  credit_card: integer
+  credit_card: string
   password: string
   zip_code_id: integer
 

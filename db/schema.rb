@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string  "email"
     t.string  "phone_number"
     t.string  "address"
-    t.integer "credit_card"
+    t.string  "credit_card"
     t.string  "password"
     t.integer "zip_code_id"
   end
