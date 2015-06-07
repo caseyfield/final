@@ -13,69 +13,40 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
-  create_table "appointment_slots", force: true do |t|
-    t.integer "start_time"
-    t.integer "end_time"
-    t.integer "day"
-    t.integer "month"
-    t.integer "year"
-    t.integer "location_id"
-    t.string  "available"
-    t.integer "user_id"
+  create_table "categories", force: true do |t|
+    t.string "name"
+    t.string "image"
   end
 
-  add_index "appointment_slots", ["location_id"], name: "index_appointment_slots_on_location_id"
-  add_index "appointment_slots", ["user_id"], name: "index_appointment_slots_on_user_id"
-
-  create_table "inventories", force: true do |t|
-    t.integer "user_id"
-    t.integer "day_created"
-    t.integer "month_created"
-    t.integer "year_created"
+  create_table "cities", force: true do |t|
+    t.string "name"
   end
 
-  add_index "inventories", ["user_id"], name: "index_inventories_on_user_id"
+  create_table "conditions", force: true do |t|
+    t.string "name"
+    t.text   "description"
+  end
 
   create_table "items", force: true do |t|
     t.string  "name"
+    t.string  "image"
     t.text    "description"
-    t.string  "photograph"
-    t.string  "status"
-    t.integer "price_received"
-    t.string  "vendor"
-    t.integer "inventory_id"
+    t.integer "price"
+    t.string  "selling_url"
+    t.string  "condition_id"
+    t.integer "city_id"
+    t.integer "category_id"
   end
 
-  add_index "items", ["inventory_id"], name: "index_items_on_inventory_id"
-
-  create_table "reviews", force: true do |t|
-    t.integer "user_id"
-    t.integer "stars"
-    t.text    "body"
-    t.integer "day_created"
-    t.integer "month_created"
-    t.integer "year_created"
-  end
-
-  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
+  add_index "items", ["category_id"], name: "index_items_on_category_id"
+  add_index "items", ["city_id"], name: "index_items_on_city_id"
+  add_index "items", ["condition_id"], name: "index_items_on_condition_id"
 
   create_table "users", force: true do |t|
     t.string  "name"
     t.string  "email"
-    t.string  "phone_number"
-    t.string  "address"
-    t.string  "credit_card"
-    t.string  "password"
-    t.integer "zip_code_id"
+    t.string  "password_digest"
+    t.boolean "admin",           default: false
   end
-
-  add_index "users", ["zip_code_id"], name: "index_users_on_zip_code_id"
-
-  create_table "zip_codes", force: true do |t|
-    t.integer "zip"
-    t.integer "location_id"
-  end
-
-  add_index "zip_codes", ["location_id"], name: "index_zip_codes_on_location_id"
 
 end

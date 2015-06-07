@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
- 
- resources :users
- resources :zip_codes
 
- root to: "users#index"
+  resources :categories
+  resources :cities
+  resources :conditions
+  resources :items
+  resources :sessions
+  resources :users
+
+  root to: "categories#index"
 
 end

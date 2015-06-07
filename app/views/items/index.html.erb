@@ -1,0 +1,17 @@
+<div class="row">
+<% @cities.each do |city| %>
+	<%= link_to city.name, items_url(category_id: params["category_id"], city_id: city.id) %>
+<% end %>
+</div>
+<div class="row">
+	<% @items.each do |item| %>
+		<div class="col-sm-3">
+			<div class="thumbmail">
+				<%= link_to image_tag(item.image, class: "img-responsive"), item_url(item) %>
+				<div class="caption">
+					<h1><%= link_to item.name, item_url(item) %></h1>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>

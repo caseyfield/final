@@ -1,42 +1,26 @@
+Item:
+  name: string
+  image: string
+  description: text
+  price: integer
+  selling_url: string
+  condition_id: string
+  city_id: integer
+  category_id: integer
+
+City:
+  name: string
+
+Category:
+  name: string
+  image: string
+
 User:
   name: string
   email: string
-  phone_number: string
-  address: string
-  credit_card: string
-  password: string
-  zip_code_id: integer
+  password_digest: string
+  admin: boolean
 
-Appointment_slot:
-  start_time: integer
-  end_time: integer
-  day: integer
-  month: integer
-  year: integer
-  available: string
-
-Zip_code:
-  zip: integer
-
-Review:
-  user_id: integer
-  stars: integer
-  body: text
-  day_created: integer
-  month_created: integer
-  year_created: integer
-
-Inventory:
-  user_id: integer
-  day_created: integer
-  month_created: integer
-  year_created: integer
-
-Item:
+Condition:
   name: string
   description: text
-  photograph: string
-  status: string
-  price_received: integer
-  vendor: string
-  inventory_id: integer

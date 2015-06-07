@@ -1,0 +1,8 @@
+<h1><%= @item.name %></h1>
+<img src="/assets/<%= @item.image %>" >
+<h3>Condition: <%= @condition.name %></h3>
+<p><%= @item.description %></p>
+<a href="<%= @item.selling_url %>">Buy now <%= number_to_currency(@item.price / 100) %></a>
+<br></br>
+<%= link_to "Edit", edit_item_url(@item), class: 'btn btn-sm btn-primary' %>
+<%= link_to "Delete", item_url(@item), method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Seriously?' } %>

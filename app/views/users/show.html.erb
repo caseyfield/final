@@ -1,8 +1,3 @@
-<h1><%= @users.name %></h1>
-<p> <strong>Email:</strong> <%= @users.email %> </p>
-<p> <strong>Phone number:</strong> <%= @users.phone_number %></p>
-<p> <strong>Address:</strong> <%= @users.address %></p>
-<p> <strong>Credit card:</strong> <%= @users.credit_card %></p>
-<p> <strong>Password:</strong> <%= @users.password %></p>
-<a class="btn btn-default" href="/users" role="button">Back</a>
-<%= link_to "Edit", edit_user_url, class: 'btn btn-default' %>
+<h1>Name: <%= @user.name %></h1>
+<p>Email: <%= @user.email %></p>
+<p>Admin?: <%= @user.admin %></p>

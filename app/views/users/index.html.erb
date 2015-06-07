@@ -1,3 +1,4 @@
+<h1>All Users</h1>
 <div class="row">
 	<div class="col-sm-12">
 		<table style="width: 50%" class="table table-striped">
@@ -5,7 +6,7 @@
 			<% @users.each do |user| %>
 			<tr>
 				<td>
-				<a href="/users/<%= user.id %>"><%= user.name %></a>
+				<%= link_to user.name, user_url(user) %>
 				</td>
 				<td>
 				<%= link_to "Edit", edit_user_url(user), class: 'btn btn-default' %>

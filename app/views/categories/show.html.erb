@@ -1,0 +1,14 @@
+<div class="row">
+	<% @items.each do |item| %>
+		<div class="col-sm-3">
+			<div class="thumbmail">
+				<a href="<%= category_url(category) %>">
+				<img src="/assets/<%= category.image %>" class="img-responsive image" alt="Responsive image">
+				</a>
+				<div class="caption">
+					<h1><%= link_to category.name, category_url(category) %></h1>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>
