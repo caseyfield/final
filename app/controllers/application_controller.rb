@@ -5,7 +5,12 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user  
   before_action :auth
+  before_action :set_categories
 
+  def set_categories
+    @categories=Category.all
+  end
+  
   def auth
     unless current_user
       redirect_to new_session_url

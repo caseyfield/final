@@ -28,11 +28,11 @@ misc=Category.create(name: "Miscellaneous", image: "dryer.jpg")
 #Creates the users
 
 puts "Creating users..."
-casey=User.create(name: "Casey Field", email: "cfield2016@kellogg.northwestern.edu", password_digest: "secret1", admin: true)
-alex=User.create(name: "Alex Bourdeau", email: "abourdeau2015@kellogg.northwestern.edu", password_digest: "secret2", admin: true)
-jeff=User.create(name: "Jeff Joffman", email: "jhoffman2016@kellogg.northwestern.edu", password_digest: "secret3", admin: false)
-cam=User.create(name: "Cam Murphy", email: "cmurphy2015@kellogg.northwestern.edu", password_digest: "secret4", admin: false)
-ian=User.create(name: "Ian Rosen", email: "irosen2016@kellogg.northwestern.edu", password_digest: "secret5", admin: false)
+casey=User.create(name: "Casey Field", email: "cfield2016@kellogg.northwestern.edu", password: "secret1", admin: true)
+alex=User.create(name: "Alex Bourdeau", email: "abourdeau2015@kellogg.northwestern.edu", password: "secret2", admin: true)
+jeff=User.create(name: "Jeff Joffman", email: "jhoffman2016@kellogg.northwestern.edu", password: "secret3", admin: false)
+cam=User.create(name: "Cam Murphy", email: "cmurphy2015@kellogg.northwestern.edu", password: "secret4", admin: false)
+ian=User.create(name: "Ian Rosen", email: "irosen2016@kellogg.northwestern.edu", password: "secret5", admin: false)
 
 #Creates the conditions
 
