@@ -41,3 +41,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'ez'
 
 gem 'bcrypt'
+
+group :development do | development|
+	gem 'sqlite3'	
+end
+
+group :production do |production|
+	gem 'rails_12factor'
+	gem 'pg'
+end
